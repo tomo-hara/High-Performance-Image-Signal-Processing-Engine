@@ -38,7 +38,7 @@ The core goals of this project are:
 |---------|---------|
 |Language |C++17|
 |IDE |Visual Studio 2017|
-|OpenCV |4.10|
+|OpenCV |4.1|
 |OS |Windows 11 (x64)|
 
 
@@ -60,7 +60,7 @@ HP-ISP-Engine/
 ### ✅ Phase 1 — Memory Architecture Analysis (Completed)
 
 - [x] Environment setup
-- [x] OpenCV 4.10 integration
+- [x] OpenCV 4.1 integration
 - [x] cv::Mat reference counting analyzer
 - [x] Memory layout inspection (step, data pointer, continuity check)
 - [x] Benchmark timing utility (high_resolution_clock)
@@ -93,13 +93,14 @@ Install with:
 
 - Windows 10 SDK
 
-### 2️⃣ Install OpenCV 4.10
+### 2️⃣ Install OpenCV 4.1
 
-Download OpenCV 4.10 (Windows prebuilt)
+Download OpenCV 4.1 (Windows prebuilt) [⬇️download link](https://opencv.org/releases/page/4)
+
 Extract to:
 
 ```makefile
-C:\opencv\opencv410
+C:\opencv
 ```
 
 ### 3️⃣ Configure Environment Variable
@@ -107,7 +108,7 @@ C:\opencv\opencv410
 Add to System Environment Variables → Path
 
 ```makefile
-C:\opencv\opencv410\build\x64\vc15\bin
+C:\opencv\x64\vc141\bin
 ```
 
 Restart your PC after setting.
@@ -133,7 +134,7 @@ Project → Properties → C/C++ → General → Additional Include Directories
 Add:
 
 ```makefile
-C:\opencv\opencv410\build\include
+C:\opencv\include
 ```
 
 ### 6️⃣ Library Directories
@@ -145,7 +146,7 @@ Project → Properties → Linker → General → Additional Library Directories
 Add:
 
 ```vbnet
-C:\opencv\opencv410\build\x64\vc15\lib
+C:\opencv\x64\vc141\lib
 ```
 
 ### 7️⃣ Link Required Libraries
@@ -157,7 +158,7 @@ Project → Properties → Linker → Input → Additional Dependencies
 Add:
 
 ```vbnet
-opencv_world4100.lib
+opencv_*.lib
 ```
 
 ### 8️⃣ Copy DLL Files (If Needed)
@@ -165,7 +166,7 @@ opencv_world4100.lib
 Copy:
 
 ```makefile
-C:\opencv\opencv410\build\x64\vc15\bin\opencv_world4100.dll
+C:\opencv\x64\vc141\bin\opencv_*.dll
 ```
 
 into your project executable directory:
